@@ -37,9 +37,18 @@ lsp.on_attach(function(client, bufnr)
 end)
 lsp.setup()
 
+require('mason').setup()
+require('mason-lspconfig').setup({
+  ensure_installed = { "clangd", "eslint", "kotlin_language_server", "lua_ls", "tsserver" },
+  handlers = {
+    lsp.default_setup,
+  },
+})
+
 local lsp_config = require('lspconfig')
-lsp_config.tsserver.setup({})
-lsp_config.kotlin_language_server.setup({})
 lsp_config.clangd.setup({})
 lsp_config.eslint.setup({})
+lsp_config.kotlin_language_server.setup({})
+lsp_config.lua_ls.setup({})
+lsp_config.tsserver.setup({})
 
