@@ -8,8 +8,7 @@ local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mapping = cmp.mapping.preset.insert({
   ["<CR>"] = cmp.mapping.confirm({ select = true }),
   
-  ["<C-Space>"] = cmp.mapping.complete(),
-   
+  ["<C-Space>"] = cmp.mapping.complete(), 
   ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
   ["<C-n>"] = cmp.mapping.select_next_item(cmp_select)
 
@@ -39,7 +38,7 @@ lsp.setup()
 
 require('mason').setup()
 require('mason-lspconfig').setup({
-  ensure_installed = { "clangd", "eslint", "kotlin_language_server", "lua_ls", "tsserver" },
+  ensure_installed = { "clangd", "eslint", "kotlin_language_server", "lua_ls", "tsserver", "sourcekit" },
   handlers = {
     lsp.default_setup,
   },
@@ -51,4 +50,4 @@ lsp_config.eslint.setup({})
 lsp_config.kotlin_language_server.setup({})
 lsp_config.lua_ls.setup({})
 lsp_config.tsserver.setup({})
-
+lsp_config.sourcekit.setup{}
