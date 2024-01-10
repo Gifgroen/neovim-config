@@ -38,7 +38,7 @@ lsp.setup()
 
 require('mason').setup()
 require('mason-lspconfig').setup({
-  ensure_installed = { "clangd", "eslint", "kotlin_language_server", "lua_ls", "tsserver", "sourcekit" },
+  ensure_installed = { "clangd", "eslint", "kotlin_language_server", "lua_ls", "tsserver" },
   handlers = {
     lsp.default_setup,
   },
@@ -50,4 +50,3 @@ lsp_config.eslint.setup({})
 lsp_config.kotlin_language_server.setup({})
 lsp_config.lua_ls.setup({})
 lsp_config.tsserver.setup({})
-lsp_config.sourcekit.setup{}
