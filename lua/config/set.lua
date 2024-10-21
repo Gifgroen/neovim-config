@@ -26,3 +26,4 @@ vim.opt.termguicolors = true
 
 vim.opt.updatetime = 50
 
+vim.api.nvim_exec('language en_US', true)
