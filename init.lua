@@ -1,6 +1,4 @@
-require("config.opt")
-require("config.keymap")
+-- TODO: setup Lazy.
 
-require("lazy-setup")
-require("config.lsp-zero")
+vim.api.nvim_exec('language en_US', true)
 
