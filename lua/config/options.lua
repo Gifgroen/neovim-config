@@ -4,6 +4,7 @@ local opt = vim.opt
 opt.nu = true
 opt.number = true
 opt.relativenumber = true
+opt.showmode = false
 
 -- Code style
 opt.expandtab = true
