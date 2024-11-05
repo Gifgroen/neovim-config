@@ -1,3 +1,5 @@
+vim.cmd.colorscheme "catppuccin-mocha"
+
 local opt = vim.opt
 
 -- Editor UI
