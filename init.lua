@@ -3,6 +3,9 @@ vim.api.nvim_exec('language en_US', true)
 vim.g.have_nerd_font = true
 vim.g.mapleader = " "
 
+require('config.options')
+require('config.keymap')
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
