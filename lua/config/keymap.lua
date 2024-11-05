@@ -1,16 +1,25 @@
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+local keymap = vim.keymap
 
--- Setup Neo-tree Project navigator 
-vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>")
+keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = 'Open [P]roject [V]iew' })
 
--- Paste over selection without replacing pasted over text
-vim.keymap.set("x", "<leader>p", "\"_dP")
+-- Clear highlights on search when pressing <Esc> in normal mode
+keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
--- Yank to Clipboard
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
+-- Diagnostic keymaps
+keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
--- Delete to Void
-vim.keymap.set("n", "<leader>d", "\"_d")
-vim.keymap.set("v", "<leader>d", "\"_d")
+-- Exit terminal mode
+keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+
+-- Disable arrow keys in normal mode
+keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
+keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
+keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+
+-- Keybinds to make split navigation easier.
+keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
